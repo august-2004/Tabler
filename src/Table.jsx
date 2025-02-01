@@ -13,13 +13,20 @@ export default function Table({ data, sortBy, sortOrder }) {
 			<table>
 				<thead>
 					<tr className="table-header">
-						<th>
+						<th className="id">
 							ID
 							<button onClick={() => handleSort("id")}>
 								{sortOrder.column === "id" && sortOrder.order === "asc" ? (
-									<img src={`up-arrow.svg`} width="10" height="10" alt="up" />
+									<img
+										className="icon"
+										src={`up-arrow.svg`}
+										width="10"
+										height="10"
+										alt="up"
+									/>
 								) : (
 									<img
+										className="icon"
 										src={`down-arrow.svg`}
 										width="10"
 										height="10"
@@ -30,14 +37,21 @@ export default function Table({ data, sortBy, sortOrder }) {
 						</th>
 						<th>Title</th>
 						<th>Description</th>
-						<th>
+						<th className="category">
 							Category
 							<button onClick={() => handleSort("category")}>
 								{sortOrder.column === "category" &&
 								sortOrder.order === "asc" ? (
-									<img src={`up-arrow.svg`} width="10" height="10" alt="up" />
+									<img
+										className="icon"
+										src={`up-arrow.svg`}
+										width="10"
+										height="10"
+										alt="up"
+									/>
 								) : (
 									<img
+										className="icon"
 										src={`down-arrow.svg`}
 										width="10"
 										height="10"
@@ -46,13 +60,20 @@ export default function Table({ data, sortBy, sortOrder }) {
 								)}
 							</button>
 						</th>
-						<th>
+						<th className="price">
 							Price
 							<button onClick={() => handleSort("price")}>
 								{sortOrder.column === "price" && sortOrder.order === "asc" ? (
-									<img src={`up-arrow.svg`} width="10" height="10" alt="up" />
+									<img
+										className="icon"
+										src={`up-arrow.svg`}
+										width="10"
+										height="10"
+										alt="up"
+									/>
 								) : (
 									<img
+										className="icon"
 										src={`down-arrow.svg`}
 										width="10"
 										height="10"
@@ -61,13 +82,20 @@ export default function Table({ data, sortBy, sortOrder }) {
 								)}
 							</button>
 						</th>
-						<th>
+						<th className="rating">
 							Rating
 							<button onClick={() => handleSort("rating")}>
 								{sortOrder.column === "rating" && sortOrder.order === "asc" ? (
-									<img src={`up-arrow.svg`} width="10" height="10" alt="up" />
+									<img
+										className="icon"
+										src={`up-arrow.svg`}
+										width="10"
+										height="10"
+										alt="up"
+									/>
 								) : (
 									<img
+										className="icon"
 										src={`down-arrow.svg`}
 										width="10"
 										height="10"

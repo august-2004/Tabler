@@ -18,3 +18,21 @@ td {
   text-align: center;
   height: 50px;
 }
+.id {
+  min-width: 50px;
+}
+.category {
+  
+  width: 120px;
+}
+.price{
+  width: 70px;
+}
+.rating {
+  width: 100px;
+}
+
+button{
+  background: transparent;
+  border: none;
+}

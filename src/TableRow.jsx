@@ -1,6 +1,5 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
-import "./TableRow.css";
 
 const colors = {
 	beauty: "#ffcce1",
