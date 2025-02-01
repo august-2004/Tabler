@@ -13,7 +13,9 @@ function App() {
 		const fetchedData = await response.json();
 		setData(fetchedData.products);
 	};
-
+	if (data.length === 0) {
+		return <div>Fetching...</div>;
+	}
 	return <Table data={data} />;
 }
 
