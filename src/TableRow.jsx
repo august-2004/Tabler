@@ -1,3 +1,7 @@
+import React from "react";
+import StarRatings from "react-star-ratings";
+import "./TableRow.css";
+
 const colors = {
 	beauty: "#ffcce1",
 	fragrances: "#f2ebcc",
@@ -21,10 +25,23 @@ export default function TableRow({ product }) {
 					alt={`${product.category} logo`}
 					width="40"
 					height="40"
+					style={{ marginLeft: "8px" }}
 				/>
 			</td>
-			<td>{product.price}</td>
-			<td>{product.rating}</td>
+			<td>{`$${product.price}`}</td>
+			<td>
+				<StarRatings
+					rating={product.rating}
+					starRatedColor="#ffd000"
+					starEmptyColor="#ffffff"
+					starDimension="24px"
+					starSpacing="2px"
+					numberOfStars={5}
+					name="rating"
+					className="rating-stars"
+				/>
+				{product.rating}
+			</td>
 		</tr>
 	);
 }
