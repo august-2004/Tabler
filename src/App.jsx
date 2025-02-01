@@ -4,6 +4,8 @@ import "./App.css";
 
 function App() {
 	const [sortedData, setSortedData] = useState([]);
+	const [sortOrder, setSortOrder] = useState({ column: "id", order: "asc" });
+
 	useEffect(() => {
 		fetchData();
 	}, []);
@@ -12,8 +14,8 @@ function App() {
 		const response = await fetch("https://dummyjson.com/products");
 		const fetchedData = await response.json();
 		setSortedData(fetchedData.products);
-		sortBy("id");
 	};
+
 	const sortBy = (column, order = "asc") => {
 		const sorted = [...sortedData].sort((a, b) => {
 			if (a[column] < b[column]) {
@@ -25,12 +27,13 @@ function App() {
 			return 0;
 		});
 		setSortedData(sorted);
+		setSortOrder({ column, order });
 	};
 
 	if (sortedData.length === 0) {
 		return <div>Fetching...</div>;
 	}
-	return <Table data={sortedData} sortBy={sortBy} />;
+	return <Table data={sortedData} sortBy={sortBy} sortOrder={sortOrder} />;
 }
 
 export default App;
