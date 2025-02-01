@@ -11,9 +11,13 @@ function App() {
 	}, []);
 
 	const fetchData = async () => {
-		const response = await fetch("https://dummyjson.com/products");
-		const fetchedData = await response.json();
-		setSortedData(fetchedData.products);
+		try {
+			const response = await fetch("https://dummyjson.com/products");
+			const fetchedData = await response.json();
+			setSortedData(fetchedData.products);
+		} catch (err) {
+			window.alert("Failed to fetch data");
+		}
 	};
 
 	const sortBy = (column, order = "asc") => {
