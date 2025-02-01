@@ -5,7 +5,7 @@ export default function Table({ data }) {
 		<div>
 			<table>
 				<thead>
-					<tr>
+					<tr className="table-header">
 						<th>ID</th>
 						<th>Title</th>
 						<th>Description</th>
