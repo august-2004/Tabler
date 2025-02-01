@@ -4,14 +4,16 @@ export default function Table({ data }) {
 	return (
 		<div>
 			<table>
-				<tr>
-					<th>ID</th>
-					<th>Title</th>
-					<th>Description</th>
-					<th>Category</th>
-					<th>Price</th>
-					<th>Rating</th>
-				</tr>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Title</th>
+						<th>Description</th>
+						<th>Category</th>
+						<th>Price</th>
+						<th>Rating</th>
+					</tr>
+				</thead>
 				<tbody>
 					{data.map((product) => (
 						<TableRow key={product.id} product={product} />
